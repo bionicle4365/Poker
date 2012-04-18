@@ -7,13 +7,16 @@ public class Hand{
   
   public Hand(Card[] hand){
     
-    
+    this.hand = new Card[CARDS_IN_HAND];
     
   }
   
   public Card getCard(int index){
     
-    
+    if(index<0 || index>4){
+    	throw new IllegalArgumentException;
+    }
+    return this.hand[index];
     
   }
   
