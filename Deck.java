@@ -4,7 +4,7 @@ public class Deck{
   public static final int CARDS_IN_DECK = 52;
   public static final int SHUFFLE_SWAP = 1000;
   private Card[] deck;
-  private int nextcard;
+  private int nextcard = -1;
   private int seed;
   
   public Deck(int seed){
@@ -54,7 +54,9 @@ public class Deck{
   
   public Card nextCard(){
     
-    return this.deck[0];
+    this.nextcard++;
+    
+    return this.deck[nextcard];
     
   }
   
@@ -74,7 +76,10 @@ public class Deck{
     System.out.println(you.toString());
     you.shuffle();
     System.out.println(you.toString());
-    
+    System.out.println(you.nextCard());
+    System.out.println(you.nextCard());
+    System.out.println(you.nextCard());
+    System.out.println(you.nextCard());
   }
   
 }
